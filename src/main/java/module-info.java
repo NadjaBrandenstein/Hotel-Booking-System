@@ -1,6 +1,7 @@
 module dk.easv.hotelbookingsystem {
     requires javafx.controls;
     requires javafx.fxml;
+    requires MaterialFX;
 
 
     opens dk.easv.hotelbookingsystem to javafx.fxml;
