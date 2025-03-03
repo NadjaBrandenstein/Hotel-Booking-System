@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="243.0" prefWidth="219.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MFXPasswordField fx:id="txtUsername" layoutX="50.0" layoutY="45.0" promptText="Username" />
+      <MFXPasswordField fx:id="txtPassword" layoutX="51.0" layoutY="122.0" promptText="Password" />
+      <MFXButton layoutX="23.0" layoutY="194.0" onAction="#btnSave" text="Save" />
+      <MFXButton layoutX="133.0" layoutY="194.0" onAction="#btnCancel" text="Cancel" />
+   </children>
+</AnchorPane>
