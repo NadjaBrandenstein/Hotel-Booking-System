@@ -10,45 +10,37 @@
 
 
 <?import javafx.scene.control.Label?>
-<AnchorPane prefHeight="430.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.OverviewController">
-   <children>
-      <MFXButton layoutX="645.0" layoutY="14.0" onAction="#btnLogout" text="Logout" />
-      <Label fx:id="lblUser" layoutX="465.0" layoutY="18.0" prefHeight="18.0" prefWidth="49.0" />
-      <MFXTextField fx:id="txtSearch" layoutX="14.0" layoutY="12.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" prefWidth="138.0" promptText="Search" />
-      <MFXButton layoutX="439.0" layoutY="383.0" onAction="#btnNew" text="New" />
-      <MFXButton layoutX="527.0" layoutY="383.0" onAction="#btnEdit" text="Edit" />
-      <MFXButton layoutX="604.0" layoutY="383.0" onAction="#btnDelete" text="Delete" />
-      <ScrollPane fx:id="spCustomer" layoutX="395.0" layoutY="55.0" prefHeight="320.0" prefWidth="306.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="310.0">
-               <children>
-                  <TableView fx:id="tblCustomer" layoutX="-1.0" layoutY="-1.0" prefHeight="310.0" prefWidth="299.0">
-                     <columns>
-                        <TableColumn fx:id="colFName" prefWidth="75.0" text="First Name" />
-                        <TableColumn fx:id="colLName" prefWidth="75.0" text="Last Name" />
-                        <TableColumn fx:id="colPhoneNo" prefWidth="75.0" text="Phone No" />
-                        <TableColumn fx:id="colEmail" prefWidth="75.0" text="Email" />
-                     </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
-      <ScrollPane fx:id="spRoom" layoutX="28.0" layoutY="55.0" prefHeight="320.0" prefWidth="306.0">
-         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="310.0">
-               <children>
-                  <TableView fx:id="tblRoom" layoutX="-1.0" layoutY="-1.0" prefHeight="310.0" prefWidth="299.0">
-                     <columns>
-                        <TableColumn fx:id="colRoomNo" prefWidth="75.0" text="Room No" />
-                        <TableColumn fx:id="colRoomSize" prefWidth="75.0" text="Room Size" />
-                        <TableColumn fx:id="colPrice" prefWidth="75.0" text="Price" />
-                        <TableColumn fx:id="colAvailable" prefWidth="75.0" text="Available" />
-                     </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-         </content>
-      </ScrollPane>
-   </children>
+<AnchorPane prefHeight="430.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.OverviewController">
+   <MFXButton layoutX="645.0" layoutY="14.0" onAction="#btnLogout" text="Logout"/>
+   <Label fx:id="lblUser" layoutX="465.0" layoutY="18.0" prefHeight="18.0" prefWidth="49.0"/>
+   <MFXTextField fx:id="txtSearch" layoutX="14.0" layoutY="12.0" maxHeight="-Infinity" minHeight="-Infinity"
+                 prefHeight="25.0" prefWidth="138.0" promptText="Search"/>
+   <MFXButton layoutX="439.0" layoutY="383.0" onAction="#btnNew" text="New"/>
+   <MFXButton layoutX="527.0" layoutY="383.0" onAction="#btnEdit" text="Edit"/>
+   <MFXButton layoutX="604.0" layoutY="383.0" onAction="#btnDelete" text="Delete"/>
+   <ScrollPane fx:id="spCustomer" layoutX="395.0" layoutY="55.0" prefHeight="320.0" prefWidth="306.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="310.0">
+         <TableView fx:id="tblCustomer" layoutX="-1.0" layoutY="-1.0" prefHeight="310.0" prefWidth="299.0">
+            <columns>
+               <TableColumn fx:id="colFName" prefWidth="75.0" text="First Name"/>
+               <TableColumn fx:id="colLName" prefWidth="75.0" text="Last Name"/>
+               <TableColumn fx:id="colPhoneNo" prefWidth="75.0" text="Phone No"/>
+               <TableColumn fx:id="colEmail" prefWidth="75.0" text="Email"/>
+            </columns>
+         </TableView>
+      </AnchorPane>
+   </ScrollPane>
+   <ScrollPane fx:id="spRoom" layoutX="28.0" layoutY="55.0" prefHeight="320.0" prefWidth="306.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="310.0">
+         <TableView fx:id="tblRoom" layoutX="-1.0" layoutY="-1.0" prefHeight="310.0" prefWidth="299.0">
+            <columns>
+               <TableColumn fx:id="colRoomNo" prefWidth="75.0" text="Room No"/>
+               <TableColumn fx:id="colRoomSize" prefWidth="75.0" text="Room Size"/>
+               <TableColumn fx:id="colPrice" prefWidth="75.0" text="Price"/>
+               <TableColumn fx:id="colAvailable" prefWidth="75.0" text="Available"/>
+            </columns>
+         </TableView>
+      </AnchorPane>
+   </ScrollPane>
 </AnchorPane>
