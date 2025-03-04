@@ -1,7 +1,5 @@
 package dk.easv.hotelbookingsystem.GUI.Controller;
 
-import dk.easv.hotelbookingsystem.BE.Rooms;
-import dk.easv.hotelbookingsystem.GUI.Model.BookingModel;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.mfxcore.controls.Label;
 import javafx.fxml.FXML;

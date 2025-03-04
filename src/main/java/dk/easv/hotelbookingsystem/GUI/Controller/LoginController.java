@@ -11,7 +11,10 @@ import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 // Java Imports
@@ -26,7 +29,7 @@ public class LoginController {
 
     @FXML
     private void btnSave(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/dk/easv/hotelbookingsystem/FXML/FXML/Customer.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/dk/easv/hotelbookingsystem/FXML/FXML/Overview.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         Stage stage = new Stage();
         stage.setTitle("Hotel Management System - Overview");
@@ -36,5 +39,6 @@ public class LoginController {
 
     @FXML
     private void btnCancel(ActionEvent actionEvent) {
+
     }
 }
