@@ -2,20 +2,49 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="390.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.CustomerController">
-   <children>
-      <MFXTextField fx:id="txtFName" layoutX="35.0" layoutY="33.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="246.0" promptText="First Name" />
-      <MFXTextField fx:id="txtLName" layoutX="35.0" layoutY="70.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="246.0" promptText="Last Name" />
-      <MFXTextField fx:id="txtPhoneNo" layoutX="35.0" layoutY="106.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="246.0" promptText="Phone Number" />
-      <MFXTextField fx:id="txtEmail" layoutX="35.0" layoutY="141.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="246.0" promptText="Email" />
-      <MFXButton layoutX="35.0" layoutY="346.0" onAction="#btnSave" text="Save" />
-      <MFXButton layoutX="226.0" layoutY="346.0" onAction="#btnCancel" text="Cancel" />
-      <MFXTextField fx:id="txtAdress" layoutX="35.0" layoutY="180.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="246.0" promptText="Address" />
-      <MFXTextField fx:id="txtPostalCode" layoutX="35.0" layoutY="222.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="246.0" promptText="Postal Code" />
-      <MFXTextField fx:id="txtCity" layoutX="35.0" layoutY="262.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="246.0" promptText="City" />
-      <MFXTextField fx:id="txtCountry" layoutX="35.0" layoutY="302.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="246.0" promptText="Country" />
-   </children>
+<AnchorPane prefHeight="430.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.OverviewController">
+   <MFXButton layoutX="672.0" layoutY="383.0" onAction="#btnBack" text="Back" />
+   <MFXTextField fx:id="txtSearchCustomer" layoutX="14.0" layoutY="12.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" prefWidth="138.0" promptText="Search" />
+   <MFXButton layoutX="24.0" layoutY="383.0" onAction="#btnNew" text="New" />
+   <MFXButton layoutX="133.0" layoutY="383.0" onAction="#btnEdit" text="Edit" />
+   <MFXButton layoutX="269.0" layoutY="383.0" onAction="#btnDelete" text="Delete" />
+   <ScrollPane fx:id="spCustomer" layoutX="24.0" layoutY="55.0" prefHeight="320.0" prefWidth="298.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="310.0">
+         <TableView fx:id="tblCustomer" layoutX="-1.0" layoutY="-1.0" prefHeight="310.0" prefWidth="299.0">
+            <columns>
+               <TableColumn fx:id="colCustomerID" prefWidth="75.0" text="Customer ID" />
+               <TableColumn fx:id="colFName" prefWidth="112.0" text="First Name" />
+               <TableColumn fx:id="colLName" prefWidth="97.60005187988281" text="Last Name" />
+            </columns>
+         </TableView>
+      </AnchorPane>
+   </ScrollPane>
+   <Label layoutX="368.0" layoutY="55.0" text="Personal Details">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Label>
+   <Label graphicTextGap="5.0" layoutX="367.0" layoutY="100.0" text="First Name:" />
+   <Label graphicTextGap="5.0" layoutX="367.0" layoutY="127.0" text="Last Name:" />
+   <Label graphicTextGap="5.0" layoutX="367.0" layoutY="153.0" text="Phone Number:" />
+   <Label graphicTextGap="5.0" layoutX="367.0" layoutY="175.0" text="Email:" />
+   <Label graphicTextGap="5.0" layoutX="366.0" layoutY="199.0" text="Address:" />
+   <Label graphicTextGap="5.0" layoutX="366.0" layoutY="225.0" text="Postal Code:" />
+   <Label graphicTextGap="5.0" layoutX="366.0" layoutY="251.0" text="City:" />
+   <Label graphicTextGap="5.0" layoutX="366.0" layoutY="275.0" text="Country:" />
+   <Label fx:id="lblFName" layoutX="514.0" layoutY="100.0" prefHeight="18.0" prefWidth="60.0" text="FN" />
+   <Label fx:id="lblLName" layoutX="514.0" layoutY="127.0" prefHeight="18.0" prefWidth="60.0" text="LN" />
+   <Label fx:id="lblPhoneNo" layoutX="514.0" layoutY="152.0" prefHeight="18.0" prefWidth="60.0" text="PN" />
+   <Label fx:id="lblEmail" layoutX="514.0" layoutY="174.0" prefHeight="18.0" prefWidth="60.0" text="E" />
+   <Label fx:id="lblAddress" layoutX="514.0" layoutY="198.0" prefHeight="18.0" prefWidth="60.0" text="A" />
+   <Label fx:id="lblPostalCode" layoutX="514.0" layoutY="224.0" prefHeight="18.0" prefWidth="60.0" text="PC" />
+   <Label fx:id="lblCity" layoutX="514.0" layoutY="250.0" prefHeight="18.0" prefWidth="60.0" text="C" />
+   <Label fx:id="lblCountry" layoutX="514.0" layoutY="274.0" prefHeight="18.0" prefWidth="60.0" text="C" />
 </AnchorPane>
