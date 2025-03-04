@@ -11,7 +11,7 @@
 
 <?import javafx.scene.control.Label?>
 <AnchorPane prefHeight="430.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.OverviewController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.OverviewController">
    <MFXButton layoutX="645.0" layoutY="14.0" onAction="#btnLogout" text="Logout"/>
    <Label fx:id="lblUser" layoutX="465.0" layoutY="18.0" prefHeight="18.0" prefWidth="49.0"/>
    <MFXTextField fx:id="txtSearch" layoutX="14.0" layoutY="12.0" maxHeight="-Infinity" minHeight="-Infinity"

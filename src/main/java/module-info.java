@@ -8,4 +8,6 @@ module dk.easv.hotelbookingsystem {
     exports dk.easv.hotelbookingsystem;
     exports dk.easv.hotelbookingsystem.GUI;
     opens dk.easv.hotelbookingsystem.GUI to javafx.fxml;
+    exports dk.easv.hotelbookingsystem.GUI.Controller;
+    opens dk.easv.hotelbookingsystem.GUI.Controller to javafx.fxml;
 }
