@@ -16,7 +16,7 @@
    <Label fx:id="lblUser" layoutX="465.0" layoutY="18.0" prefHeight="18.0" prefWidth="49.0"/>
    <MFXTextField fx:id="txtSearch" layoutX="14.0" layoutY="12.0" maxHeight="-Infinity" minHeight="-Infinity"
                  prefHeight="25.0" prefWidth="138.0" promptText="Search"/>
-   <MFXButton layoutX="439.0" layoutY="383.0" onAction="#btnNew" text="New"/>
+   <MFXButton layoutX="440.0" layoutY="383.0" onAction="#btnNew" text="New"/>
    <MFXButton layoutX="527.0" layoutY="383.0" onAction="#btnEdit" text="Edit"/>
    <MFXButton layoutX="604.0" layoutY="383.0" onAction="#btnDelete" text="Delete"/>
    <ScrollPane fx:id="spCustomer" layoutX="395.0" layoutY="55.0" prefHeight="320.0" prefWidth="306.0">
