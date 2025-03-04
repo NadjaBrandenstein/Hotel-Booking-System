@@ -1,4 +1,4 @@
-package dk.easv.hotelbookingsystem.GUI;
+package dk.easv.hotelbookingsystem.GUI.Controller;
 
 import dk.easv.hotelbookingsystem.Main;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
