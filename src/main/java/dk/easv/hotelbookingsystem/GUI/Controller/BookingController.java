@@ -35,7 +35,7 @@ public class BookingController implements Initializable {
     @FXML
     private GridPane calendarGrid;
 
-    // Model instance
+    // Other instance
     private BookingModel bookingModel;
 
     public BookingController() {
@@ -52,11 +52,9 @@ public class BookingController implements Initializable {
         // Other UI setup
         lblSelectDate.setText("Select date");
 
-        // Load the initial booking grid
-        dpDatePicker.setValue(LocalDate.now()); // Set default date
+        dpDatePicker.setValue(LocalDate.now());
         generateBookingGrid(LocalDate.now());
 
-        // Update grid when DatePicker changes
         dpDatePicker.valueProperty().addListener((obs, oldDate, newDate) -> {
             if (newDate != null) {
                 generateBookingGrid(newDate);
@@ -65,58 +63,57 @@ public class BookingController implements Initializable {
     }
 
     private void generateBookingGrid(LocalDate startDate) {
-        calendarGrid.getChildren().clear(); // Clear old data
-        calendarGrid.getColumnConstraints().clear(); // Clear column constraints
+        calendarGrid.getChildren().clear();
+        calendarGrid.getColumnConstraints().clear();
 
         List<Rooms> rooms = bookingModel.getRooms();
 
-        // Set up column constraints for even spacing
+
         ColumnConstraints roomColumn = new ColumnConstraints();
-        roomColumn.setMinWidth(100); // Set fixed width for the Room No column
-        roomColumn.setHgrow(Priority.NEVER); // Prevent resizing
+        roomColumn.setMinWidth(100);
+        roomColumn.setHgrow(Priority.NEVER);
         calendarGrid.getColumnConstraints().add(roomColumn);
 
-        for (int day = 0; day < 5; day++) {
+        for (int day = 0; day < 10; day++) {
             ColumnConstraints column = new ColumnConstraints();
-            column.setMinWidth(120); // Ensures equal column spacing
-            column.setHgrow(Priority.ALWAYS); // Allow resizing
+            column.setMinWidth(100);
+            column.setHgrow(Priority.ALWAYS);
             calendarGrid.getColumnConstraints().add(column);
         }
 
-        // Generate column headers (dates)
-        for (int day = 0; day < 5; day++) {
+        for (int day = 0; day < 10; day++) {
             LocalDate currentDate = startDate.plusDays(day);
             Label dateLabel = new Label(currentDate.toString());
 
-            // Wrap in HBox to properly space it
+
             HBox labelContainer = new HBox(dateLabel);
-            labelContainer.setMinWidth(120);
+            labelContainer.setMinWidth(125);
             labelContainer.setAlignment(Pos.CENTER);
 
             dateLabel.setTextAlignment(TextAlignment.CENTER);
-            calendarGrid.add(labelContainer, day + 1, 0); // Add to first row
+            calendarGrid.add(labelContainer, day + 1, 0);
         }
 
-        // Populate the grid with room booking statuses
+
         for (int row = 0; row < rooms.size(); row++) {
             Rooms room = rooms.get(row);
 
-            // Add room number in the first column
+
             Label roomLabel = new Label("Room " + room.getRoomNumber());
-            GridPane.setMargin(roomLabel, new Insets(5, 5, 5, 5)); // Adds spacing
+            GridPane.setMargin(roomLabel, new Insets(5, 0, 5, 0));
             calendarGrid.add(roomLabel, 0, row + 1);
 
-            for (int day = 0; day < 5; day++) {
+            for (int day = 0; day < 10; day++) {
                 LocalDate currentDate = startDate.plusDays(day);
 
-                // Placeholder: Replace with actual booking data check
-                boolean isBooked = Math.random() > 0.5; // Simulated random booking
+
+                boolean isBooked = Math.random() > 0.5;
 
                 Rectangle cell = new Rectangle(100, 40, isBooked ? Color.RED : Color.LIGHTGREEN);
                 cell.setStroke(Color.BLACK);
                 cell.setArcWidth(5);
                 cell.setArcHeight(5);
-                GridPane.setMargin(cell, new Insets(5, 5, 5, 5)); // Adds consistent spacing
+                GridPane.setMargin(cell, new Insets(0, 0, 0, 0));
                 calendarGrid.add(cell, day + 1, row + 1);
             }
         }
