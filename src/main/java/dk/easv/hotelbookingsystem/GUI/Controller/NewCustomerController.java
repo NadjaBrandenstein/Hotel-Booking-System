@@ -3,6 +3,9 @@ package dk.easv.hotelbookingsystem.GUI.Controller;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class NewCustomerController {
     @FXML
@@ -24,10 +27,11 @@ public class NewCustomerController {
 
     @FXML
     private void btnSave(ActionEvent actionEvent) {
-
+        //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource);
     }
 
     @FXML
     private void btnCancel(ActionEvent actionEvent) {
+        ((Stage) (((Button) actionEvent.getSource()).getScene().getWindow())).close();
     }
 }
