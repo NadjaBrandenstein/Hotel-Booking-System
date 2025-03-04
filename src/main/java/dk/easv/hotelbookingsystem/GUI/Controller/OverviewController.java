@@ -6,22 +6,29 @@ import io.github.palexdev.mfxcore.controls.Label;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class OverviewController {
-
 
     @FXML
     private MFXTextField txtSearch;
     @FXML
     private Label lblUser;
-
 
     // TableView customer
     @FXML
@@ -53,20 +60,27 @@ public class OverviewController {
     @FXML
     private Label lblName;
 
-
+   /* // Buttons
     @FXML
-    private void btnLogout(ActionEvent actionEvent) {
-    }
-
+    private Button btnBooking;
     @FXML
-    private void btnNew(ActionEvent actionEvent) {
-    }
+    private Button btnCustomer;
+    @FXML
+    private Button btnCheckIn;
+    @FXML
+    private Button btnCheckOut;
+    @FXML
+    private Button btnLogOut;*/
 
-    public void btnEdit(ActionEvent actionEvent) {
-    }
-
-    public void btnDelete(ActionEvent actionEvent) {
-    }
+   /* @FXML
+    public void initialize() {
+        // Set button icons
+        setButtonIcon(btnBooking, "/dk/easv/hotelbookingsystem/FXML/Icon/Booking.png");
+        /*setButtonIcon(btnCustomer, "/dk/easv/hotelbookingsystem/FXML/Icon/Customer.png");
+        setButtonIcon(btnCheckIn, "/dk/easv/hotelbookingsystem/FXML/Icon/CheckIn.png");
+        setButtonIcon(btnCheckOut, "/dk/easv/hotelbookingsystem/FXML/Icon/CheckOut.png");
+        setButtonIcon(btnLogOut, "/dk/easv/hotelbookingsystem/FXML/Icon/LogOut.png");
+    }*/
 
     @FXML
     private void btnBooking(ActionEvent actionEvent) throws IOException {
@@ -76,6 +90,7 @@ public class OverviewController {
         stage.setTitle("Hotel Management System - Overview");
         stage.setScene(scene);
         stage.show();
+
     }
 
     @FXML
@@ -100,7 +115,7 @@ public class OverviewController {
 
     @FXML
     private void btnLogOut(ActionEvent actionEvent) {
-
+        ((Stage) (((Button) actionEvent.getSource()).getScene().getWindow())).close();
     }
 
     @FXML
@@ -112,4 +127,11 @@ public class OverviewController {
         stage.setScene(scene);
         stage.show();
     }
+
+
+    /*private void setButtonIcon(Button button, String iconPath) {
+        Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream(iconPath)));
+        button.setGraphic(new ImageView(icon)); // Set the button graphic
+    }*/
+
 }

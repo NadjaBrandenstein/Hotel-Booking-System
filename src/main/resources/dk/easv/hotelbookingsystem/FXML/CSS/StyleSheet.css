@@ -1,0 +1,16 @@
+
+anchorPane{
+    -fx-background-color: #FFFFFF;
+}
+
+MFXButton {
+    -fx-background-color: lightblue;
+}
+
+.whiteButton {
+    -fx-background-color: white !important;
+}
+
+.table-view .column-header {
+    -fx-background-color: lightblue;
+}

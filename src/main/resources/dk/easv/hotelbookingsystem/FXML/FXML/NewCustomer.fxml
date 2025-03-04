@@ -6,7 +6,7 @@
 
 
 <AnchorPane prefHeight="390.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns:fx="http://javafx.com/fxml/1" stylesheets="@/dk/easv/hotelbookingsystem/FXML/CSS/StyleSheet.css"
             fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.NewCustomerController">
    <MFXTextField fx:id="txtFName" layoutX="35.0" layoutY="33.0" minHeight="-Infinity" prefHeight="25.0"
                  prefWidth="246.0" promptText="First Name"/>

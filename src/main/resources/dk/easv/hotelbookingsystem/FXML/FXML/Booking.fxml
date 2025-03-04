@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.BookingController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@/dk/easv/hotelbookingsystem/FXML/CSS/StyleSheet.css" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.BookingController">
    <left>
       <TableView fx:id="tblRoom" prefHeight="400.0" prefWidth="76.0" BorderPane.alignment="CENTER">
         <columns>

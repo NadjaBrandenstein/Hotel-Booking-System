@@ -2,20 +2,159 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.mfxcore.controls.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="546.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.OverviewController">
+<AnchorPane prefHeight="431.0" prefWidth="709.0" stylesheets="@/dk/easv/hotelbookingsystem/FXML/CSS/StyleSheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.OverviewController">
    <children>
-      <MFXButton layoutX="61.0" layoutY="90.0" onAction="#btnBooking" text="Booking" />
-      <MFXButton layoutX="215.0" layoutY="90.0" onAction="#btnCustomer" text="Customer" />
-      <MFXButton layoutX="392.0" layoutY="90.0" onAction="#btnCheckIn" text="Check In" />
-      <MFXButton layoutX="54.0" layoutY="229.0" text="Room Service" />
-      <MFXButton layoutX="215.0" layoutY="163.0" text="Laundry" />
-      <MFXButton layoutX="390.0" layoutY="163.0" text="Booking Report" />
-      <MFXButton layoutX="460.0" layoutY="25.0" onAction="#btnLogOut" text="Log Out" />
+      <MFXButton layoutX="600.0" layoutY="16.0" onAction="#btnLogOut" text="Log Out" />
       <Label fx:id="lblName" layoutX="416.0" layoutY="29.0" />
-      <MFXButton layoutX="54.0" layoutY="163.0" onAction="#btnCheckOut" text="Check Out" />
-      <MFXButton layoutX="203.0" layoutY="229.0" text="Party Booking" />
-      <MFXButton layoutX="397.0" layoutY="229.0" text="Pool Booking" />
+      <HBox layoutX="46.0" layoutY="53.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton onAction="#btnBooking" prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/Booking.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </MFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="258.0" layoutY="53.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton onAction="#btnCustomer" prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/Customer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="476.0" layoutY="53.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton onAction="#btnCheckIn" prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/CheckOut.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="46.0" layoutY="172.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton onAction="#btnCheckOut" prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/CheckOut.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="257.0" layoutY="172.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/Laundry.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="477.0" layoutY="172.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/BookingReport.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="44.0" layoutY="290.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/RoomService.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="255.0" layoutY="290.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/PartyBooking.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="474.0" layoutY="290.0" prefHeight="104.0" prefWidth="186.0">
+         <children>
+            <MFXButton prefHeight="103.0" prefWidth="178.0" styleClass="whiteButton" text="." textFill="WHITE">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="101.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/PoolBooking.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
