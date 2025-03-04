@@ -19,7 +19,7 @@ public class LoginController {
 
     @FXML
     private void btnSave(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/dk/easv/hotelbookingsystem/FXML/Customer.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/dk/easv/hotelbookingsystem/FXML/FXML/Customer.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         Stage stage = new Stage();
         stage.setTitle("Hotel Management System - Overview");
