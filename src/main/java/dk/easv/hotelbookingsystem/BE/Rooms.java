@@ -12,6 +12,10 @@ public class Rooms {
         this.price = price;
     }
 
+    public Rooms(int roomNumber){
+        this.roomNumber = roomNumber;
+    }
+
     public int getRoomNumber() {
         return roomNumber;
     }
