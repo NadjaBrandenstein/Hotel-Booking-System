@@ -10,6 +10,8 @@ import io.github.palexdev.mfxcore.controls.Label;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -68,6 +70,10 @@ public class CheckInOutController implements Initializable {
     }
 
     @FXML
+    private void dpCheckIn(ActionEvent actionEvent) {
+    }
+
+    @FXML
     private void dpCheckOut(ActionEvent actionEvent) {
     }
 
@@ -77,8 +83,9 @@ public class CheckInOutController implements Initializable {
 
     @FXML
     private void btnCancel(ActionEvent actionEvent) {
-
+        ((Stage) (((Button) actionEvent.getSource()).getScene().getWindow())).close();
     }
+
 
 
 }

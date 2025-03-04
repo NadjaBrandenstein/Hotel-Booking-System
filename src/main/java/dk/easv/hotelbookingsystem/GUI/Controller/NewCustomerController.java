@@ -27,7 +27,7 @@ public class NewCustomerController {
 
     @FXML
     private void btnSave(ActionEvent actionEvent) {
-        //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource);
+
     }
 
     @FXML

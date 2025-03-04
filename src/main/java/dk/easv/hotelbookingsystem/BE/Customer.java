@@ -25,6 +25,9 @@ public class Customer {
         Country = country;
     }
 
+    public Customer(int id, String firstName, String lastName) {
+    }
+
     public int getCustomerId() {
         return customerId;
     }
@@ -110,5 +113,17 @@ public class Customer {
                 ", city='" + city + '\'' +
                 ", Country='" + Country + '\'' +
                 '}';
+    }
+
+    public String getName() {
+        return firstName + " " + lastName;
+    }
+
+    public String getPhone() {
+        return phoneNumber;
+    }
+
+    public int getId() {
+        return customerId;
     }
 }

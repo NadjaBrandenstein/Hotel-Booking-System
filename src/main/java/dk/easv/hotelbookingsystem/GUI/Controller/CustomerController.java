@@ -1,15 +1,18 @@
 package dk.easv.hotelbookingsystem.GUI.Controller;
 
 // other imports
+import dk.easv.hotelbookingsystem.BE.Customer;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 
 // Javafx Imports
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CustomerController {
     @FXML
@@ -57,24 +60,30 @@ public class CustomerController {
     @FXML
     private Label lblCity;
 
-    @FXML
-    private void btnSave(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    private void btnCancel(ActionEvent actionEvent) {
-    }
 
     @FXML
     private void btnBack(ActionEvent actionEvent) {
+        ((Stage) (((Button) actionEvent.getSource()).getScene().getWindow())).close();
     }
 
     @FXML
-    private void btnNew(ActionEvent actionEvent) {
+    private void btnNew(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dk/easv/hotelbookingsystem/FXML/FXML/NewCustomer.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+
+
     }
 
     @FXML
-    private void btnEdit(ActionEvent actionEvent) {
+    private void btnEdit(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dk/easv/hotelbookingsystem/FXML/FXML/NewCustomer.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

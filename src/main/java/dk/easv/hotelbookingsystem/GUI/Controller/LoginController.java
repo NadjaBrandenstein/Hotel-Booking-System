@@ -28,17 +28,20 @@ public class LoginController {
 
 
     @FXML
-    private void btnSave(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/dk/easv/hotelbookingsystem/FXML/FXML/Overview.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        Stage stage = new Stage();
+    private void btnLogIn(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/dk/easv/hotelbookingsystem/FXML/FXML/Overview.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
         stage.setTitle("Hotel Management System - Overview");
-        stage.setScene(scene);
+        stage.setResizable(true);
+        stage.sizeToScene();
         stage.show();
+
     }
 
     @FXML
     private void btnCancel(ActionEvent actionEvent) {
-
+        ((Stage) (((Button) actionEvent.getSource()).getScene().getWindow())).close();
     }
+
 }

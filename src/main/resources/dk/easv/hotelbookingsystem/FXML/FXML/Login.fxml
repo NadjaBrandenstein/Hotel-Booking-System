@@ -3,13 +3,16 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="243.0" prefWidth="219.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="245.0" prefWidth="245.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@/dk/easv/hotelbookingsystem/FXML/CSS/StyleSheet.css" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.LoginController">
    <children>
-      <MFXPasswordField fx:id="txtPassword" layoutX="51.0" layoutY="122.0" promptText="Password" />
-      <MFXButton layoutX="24.0" layoutY="194.0" onAction="#btnSave" text="Save" />
-      <MFXButton layoutX="133.0" layoutY="194.0" onAction="#btnCancel" text="Cancel" />
-      <MFXTextField fx:id="txtUsername" layoutX="51.0" layoutY="49.0" prefHeight="50.0" prefWidth="119.0" promptText="Username" />
+      <Label layoutX="45.0" layoutY="33.0" text="Username:" />
+      <Label layoutX="47.0" layoutY="108.0" text="Password:" />
+      <MFXPasswordField fx:id="txtPassword" layoutX="45.0" layoutY="125.0" prefHeight="20.0" prefWidth="150.0" promptText="Password" />
+      <MFXButton layoutX="25.0" layoutY="201.0" onAction="#btnLogIn" text="Log In" />
+      <MFXButton layoutX="172.0" layoutY="201.0" onAction="#btnCancel" text="Cancel" />
+      <MFXTextField fx:id="txtUsername" layoutX="45.0" layoutY="51.0" prefHeight="20.0" prefWidth="150.0" promptText="Username" />
    </children>
 </AnchorPane>
