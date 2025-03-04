@@ -1,6 +1,9 @@
 package dk.easv.hotelbookingsystem.GUI.Controller;
 
+// other imports
 import io.github.palexdev.materialfx.controls.MFXTextField;
+
+// Javafx Imports
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -1,10 +1,22 @@
 package dk.easv.hotelbookingsystem.GUI.Controller;
 
+// other import
+import dk.easv.hotelbookingsystem.BE.Customer;
+import dk.easv.hotelbookingsystem.GUI.Model.CustomerModel;
+import dk.easv.hotelbookingsystem.GUI.Model.RoomModel;
 import io.github.palexdev.mfxcore.controls.Label;
+
+// JavaFX Import
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
-public class CheckInOutController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class CheckInOutController implements Initializable {
+
+    // JavaFX Instance Fields
     @FXML
     private Label lblName;
     @FXML
@@ -23,6 +35,29 @@ public class CheckInOutController {
     private Label lblPrice;
     @FXML
     private Label lblCounrty;
+
+    // Other Instance Fields
+    private CustomerModel customerModel;
+    private RoomModel roomModel;
+
+
+    public CheckInOutController() {
+        customerModel = new CustomerModel();
+        roomModel = new RoomModel();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        lblName.setText(lblName.getText());
+        lblPhoneNo.setText(lblPhoneNo.getText());
+        lblEmail.setText(lblEmail.getText());
+        lblAddress.setText(lblAddress.getText());
+        lblPostalCode.setText(lblPostalCode.getText());
+        lblCity.setText(lblCity.getText());
+        lblRoomNo.setText(lblRoomNo.getText());
+        lblPrice.setText(lblPrice.getText());
+        lblCounrty.setText(lblCounrty.getText());
+    }
 
     @FXML
     private void dropCustomer(ActionEvent actionEvent) {
@@ -44,4 +79,6 @@ public class CheckInOutController {
     private void btnCancel(ActionEvent actionEvent) {
 
     }
+
+
 }

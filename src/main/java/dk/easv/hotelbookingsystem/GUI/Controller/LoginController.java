@@ -1,14 +1,20 @@
 package dk.easv.hotelbookingsystem.GUI.Controller;
 
+// Project Imports
 import dk.easv.hotelbookingsystem.Main;
+
+// other imports
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+
+// javafx import
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+// Java Imports
 import java.io.IOException;
 
 public class LoginController {
