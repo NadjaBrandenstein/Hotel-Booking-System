@@ -44,7 +44,8 @@ public class OverviewController {
     private TableColumn colPrice;
     @FXML
     private TableColumn colAvailable;
-
+    @FXML
+    private Label lblName;
 
 
     @FXML
@@ -59,5 +60,26 @@ public class OverviewController {
     }
 
     public void btnDelete(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void btnBooking(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void btnCustomer(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void btnCheckIn(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void btnLogOut(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void btnCheckOut(ActionEvent actionEvent) {
+
     }
 }
