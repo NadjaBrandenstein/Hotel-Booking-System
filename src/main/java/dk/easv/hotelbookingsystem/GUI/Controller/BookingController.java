@@ -99,9 +99,9 @@ public class BookingController implements Initializable {
             Rooms room = rooms.get(row);
 
 
-            Label roomLabel = new Label("Room " + room.getRoomNumber());
-            GridPane.setMargin(roomLabel, new Insets(5, 0, 5, 0));
-            calendarGrid.add(roomLabel, 0, row + 1);
+            //Label roomLabel = new Label("Room " + room.getRoomNumber());
+            //GridPane.setMargin(roomLabel, new Insets(5, 0, 5, 0));
+            //calendarGrid.add(roomLabel, 0, row + 1);
 
             for (int day = 0; day < 10; day++) {
                 LocalDate currentDate = startDate.plusDays(day);
