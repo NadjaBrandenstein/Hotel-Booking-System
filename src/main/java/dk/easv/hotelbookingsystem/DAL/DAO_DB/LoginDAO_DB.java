@@ -1,13 +1,14 @@
 package dk.easv.hotelbookingsystem.DAL.DAO_DB;
 
 import dk.easv.hotelbookingsystem.DAL.DBConnection.DBConnection;
+import dk.easv.hotelbookingsystem.DAL.Interface.ILogin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginDAO_DB {
+public class LoginDAO_DB implements ILogin {
     private final DBConnection dbConnection;
 
     public LoginDAO_DB(DBConnection dbConnection) {

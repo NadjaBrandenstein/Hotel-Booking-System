@@ -2,10 +2,11 @@ package dk.easv.hotelbookingsystem.DAL.DAO_DB;
 
 import dk.easv.hotelbookingsystem.BE.Customer;
 import dk.easv.hotelbookingsystem.DAL.DBConnection.DBConnection;
+import dk.easv.hotelbookingsystem.DAL.Interface.ICustomer;
 
 import java.sql.*;
 
-public class CustomerDAO_DB {
+public class CustomerDAO_DB implements ICustomer {
     private final DBConnection dbConnection;
 
     public CustomerDAO_DB(DBConnection dbConnection) {

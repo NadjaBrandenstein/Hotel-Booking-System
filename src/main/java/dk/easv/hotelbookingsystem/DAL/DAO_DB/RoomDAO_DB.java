@@ -2,12 +2,14 @@ package dk.easv.hotelbookingsystem.DAL.DAO_DB;
 
 import dk.easv.hotelbookingsystem.BE.Rooms;
 import dk.easv.hotelbookingsystem.DAL.DBConnection.DBConnection;
+import dk.easv.hotelbookingsystem.DAL.Interface.IRoom;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class RoomDAO_DB {
+public class RoomDAO_DB implements IRoom {
 
 
     private final DBConnection dbConnection;
