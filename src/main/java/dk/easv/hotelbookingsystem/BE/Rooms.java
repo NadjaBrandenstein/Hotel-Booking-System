@@ -16,6 +16,9 @@ public class Rooms {
         this.roomNumber = roomNumber;
     }
 
+    public Rooms(int id, int roomNumber, String type, double price, boolean isAvailable) {
+    }
+
     public int getRoomNumber() {
         return roomNumber;
     }
@@ -47,5 +50,21 @@ public class Rooms {
                 ", roomType='" + roomType + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public String getType() {
+        return roomType;
+    }
+
+    public boolean isAvailable() {
+        return roomNumber > 0;
+    }
+
+    public void setId(int anInt) {
+        roomNumber = anInt;
+    }
+
+    public int getId() {
+        return roomNumber;
     }
 }
