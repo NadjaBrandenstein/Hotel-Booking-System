@@ -12,12 +12,10 @@ import java.util.List;
 public class RoomModel {
 
     private RoomManager roomManager;
-    private BookingController bookingController;
     private ObservableList<Rooms> tblRoom;
 
     public RoomModel() throws Exception {
         roomManager = new RoomManager();
-        bookingController = new BookingController();
 
         tblRoom = FXCollections.observableArrayList();
         tblRoom.addAll(roomManager.getAllRooms());
@@ -34,8 +32,8 @@ public class RoomModel {
 
     }
 
-    private Rooms updateRoom(Rooms room) throws Exception{
-        return roomManager.updateRoom(room);
+    private void updateRoom(Rooms room) throws Exception{
+
     }
 
     private List<Rooms> getAllRooms() throws Exception{

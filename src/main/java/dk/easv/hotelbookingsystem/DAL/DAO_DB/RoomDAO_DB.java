@@ -27,7 +27,7 @@ public class RoomDAO_DB implements IRoom {
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setInt(1, room.getRoomNumber());
-            stmt.setString(2, room.getType());
+            stmt.setString(2, room.getRoomType());
             stmt.setDouble(3, room.getPrice());
             stmt.setBoolean(4, room.isAvailable());
 
@@ -35,96 +35,67 @@ public class RoomDAO_DB implements IRoom {
             if (affectedRows == 0) {
                 throw new SQLException("Failed to add room");
             }
-            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    room.setId(generatedKeys.getInt(1));
-                }
-            }
+
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return addRoom(room);
+        return room;
     }
 
 
-    public Rooms getRoomById(int id) throws Exception {
-        String sql = "SELECT * FROM rooms WHERE id = ?";
-        try (Connection conn = dbConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-                return new Rooms(
-                        rs.getInt("id"),
-                        rs.getInt("room_number"),
-                        rs.getString("type"),
-                        rs.getDouble("price"),
-                        rs.getBoolean("is_available")
-                );
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return getRoomById(id);
-    }
 
     // Get all rooms
     public List<Rooms> getAllRooms() throws Exception {
-        List<Rooms> rooms = new ArrayList<>();
-        String sql = "SELECT * FROM rooms";
+        ArrayList<Rooms> allRooms = new ArrayList<>();
+        String sql = "SELECT * FROM dbo.Room";
 
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                rooms.add(new Rooms(
-                        rs.getInt("id"),
-                        rs.getInt("room_number"),
-                        rs.getString("type"),
-                        rs.getDouble("price"),
-                        rs.getBoolean("is_available")
-                ));
+                int roomNumber = rs.getInt("RoomNo");
+                String roomType = rs.getString("Room Type");
+                double price = rs.getDouble("Price");
+                boolean isAvailable = rs.getBoolean("Is_Available");
+
+                Rooms rooms = new Rooms(roomNumber, roomType, price, isAvailable);
+                allRooms.add(rooms);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return rooms;
+        return allRooms;
     }
 
 
-    public Rooms updateRoom(Rooms room) throws Exception {
-        String sql = "UPDATE rooms SET room_number = ?, type = ?, price = ?, is_available = ? WHERE id = ?";
-
+    public void updateRoom(Rooms room) throws Exception {
+        String sql = "UPDATE rooms SET type = ?, price = ?, is_available = ? WHERE room_number = ?";
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, room.getRoomNumber());
-            stmt.setString(2, room.getType());
-            stmt.setDouble(3, room.getPrice());
-            stmt.setBoolean(4, room.isAvailable());
-            stmt.setInt(5, room.getId());
+            stmt.setString(1, room.getRoomType());  // Room type should be first
+            stmt.setDouble(2, room.getPrice());
+            stmt.setBoolean(3, room.isAvailable());
+            stmt.setInt(4, room.getRoomNumber());   // Room number should be last
 
             stmt.executeUpdate();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return updateRoom(room);
     }
 
-    public void deleteRoom(int id) throws Exception {
-        String sql = "DELETE FROM rooms WHERE id = ?";
+    public void deleteRoom(int roomNumber) throws Exception {
+        String sql = "DELETE FROM rooms WHERE RoomNo = ?";
 
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, id);
+            stmt.setInt(1, roomNumber);
             stmt.executeUpdate();
 
         } catch (SQLException e) {

@@ -5,6 +5,7 @@ public class Rooms {
     private int roomNumber;
     private String roomType;
     private Double price;
+    private boolean isAvailable;
 
     public Rooms(int roomNumber, String roomType, Double price) {
         this.roomNumber = roomNumber;
@@ -16,7 +17,11 @@ public class Rooms {
         this.roomNumber = roomNumber;
     }
 
-    public Rooms(int id, int roomNumber, String type, double price, boolean isAvailable) {
+    public Rooms(int roomNumber, String type, double price, boolean isAvailable) {
+        this.roomNumber = roomNumber;
+        this.roomType = type;
+        this.price = price;
+        this.isAvailable = isAvailable;
     }
 
     public int getRoomNumber() {
@@ -43,6 +48,14 @@ public class Rooms {
         this.price = price;
     }
 
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
     @Override
     public String toString() {
         return "Rooms{" +
@@ -52,19 +65,5 @@ public class Rooms {
                 '}';
     }
 
-    public String getType() {
-        return roomType;
-    }
 
-    public boolean isAvailable() {
-        return roomNumber > 0;
-    }
-
-    public void setId(int anInt) {
-        roomNumber = anInt;
-    }
-
-    public int getId() {
-        return roomNumber;
-    }
 }

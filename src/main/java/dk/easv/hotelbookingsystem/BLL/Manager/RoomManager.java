@@ -19,8 +19,8 @@ public class RoomManager {
         return roomDAO.addRoom(room);
     }
 
-    public Rooms updateRoom(Rooms room) throws Exception{
-        return roomDAO.updateRoom(room);
+    public void updateRoom(Rooms room) throws Exception{
+
     }
 
     public List<Rooms> getAllRooms() throws Exception{
