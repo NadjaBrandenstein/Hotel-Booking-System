@@ -1,5 +1,6 @@
 package dk.easv.hotelbookingsystem.DAL.DAO_DB;
 
+import dk.easv.hotelbookingsystem.BE.Rooms;
 import dk.easv.hotelbookingsystem.DAL.DBConnection.DBConnection;
 import java.sql.*;
 import java.util.ArrayList;
@@ -8,36 +9,6 @@ import java.util.List;
 
 public class RoomDAO_DB {
 
-    public class Room {
-        private int id;
-        private int roomNumber;
-        private String type;
-        private double price;
-        private boolean isAvailable;
-
-        public Room(int id, int roomNumber, String type, double price, boolean isAvailable) {
-            this.id = id;
-            this.roomNumber = roomNumber;
-            this.type = type;
-            this.price = price;
-            this.isAvailable = isAvailable;
-        }
-
-        public int getId() { return id; }
-        public void setId(int id) { this.id = id; }
-
-        public int getRoomNumber() { return roomNumber; }
-        public void setRoomNumber(int roomNumber) { this.roomNumber = roomNumber; }
-
-        public String getType() { return type; }
-        public void setType(String type) { this.type = type; }
-
-        public double getPrice() { return price; }
-        public void setPrice(double price) { this.price = price; }
-
-        public boolean isAvailable() { return isAvailable; }
-        public void setAvailable(boolean available) { isAvailable = available; }
-    }
 
     private final DBConnection dbConnection;
 
@@ -49,7 +20,7 @@ public class RoomDAO_DB {
     }
 
 
-    public void addRoom(Room room) {
+    public void addRoom(Rooms room) {
         String sql = "INSERT INTO rooms (room_number, type, price, is_available) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = dbConnection.getConnection();
@@ -76,7 +47,7 @@ public class RoomDAO_DB {
     }
 
 
-    public Room getRoomById(int id) {
+    public Rooms getRoomById(int id) {
         String sql = "SELECT * FROM rooms WHERE id = ?";
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -85,7 +56,7 @@ public class RoomDAO_DB {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                return new Room(
+                return new Rooms(
                         rs.getInt("id"),
                         rs.getInt("room_number"),
                         rs.getString("type"),
@@ -100,8 +71,8 @@ public class RoomDAO_DB {
     }
 
     // Get all rooms
-    public List<Room> getAllRooms() {
-        List<Room> rooms = new ArrayList<>();
+    public List<Rooms> getAllRooms() {
+        List<Rooms> rooms = new ArrayList<>();
         String sql = "SELECT * FROM rooms";
 
         try (Connection conn = dbConnection.getConnection();
@@ -109,7 +80,7 @@ public class RoomDAO_DB {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                rooms.add(new Room(
+                rooms.add(new Rooms(
                         rs.getInt("id"),
                         rs.getInt("room_number"),
                         rs.getString("type"),
@@ -124,7 +95,7 @@ public class RoomDAO_DB {
     }
 
 
-    public void updateRoom(Room room) {
+    public void updateRoom(Rooms room) {
         String sql = "UPDATE rooms SET room_number = ?, type = ?, price = ?, is_available = ? WHERE id = ?";
 
         try (Connection conn = dbConnection.getConnection();
