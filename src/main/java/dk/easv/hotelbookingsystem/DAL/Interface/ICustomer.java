@@ -7,6 +7,6 @@ public interface ICustomer {
 
     Customer createCustomer(Customer customer) throws Exception;
     Customer getCustomerById(int id) throws Exception;
-    void updateCustomer (Customer customer) throws Exception;
+    Customer updateCustomer (Customer customer) throws Exception;
     void deleteCustomer(int id) throws Exception;
 }

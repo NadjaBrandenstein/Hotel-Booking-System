@@ -13,7 +13,7 @@ public class CustomerDAO_DB implements ICustomer {
         this.dbConnection = dbConnection;
     }
 
-    public Customer createCustomer(Customer customer) {
+    public Customer createCustomer(Customer customer) throws Exception {
         String sql = "INSERT INTO customer (first_name, last_name) VALUES (?, ?)";
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -29,10 +29,10 @@ public class CustomerDAO_DB implements ICustomer {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return createCustomer(customer);
     }
 
-        public Customer getCustomerById(int id) {
+        public Customer getCustomerById(int id) throws Exception {
             String sql = "SELECT * FROM Customer WHERE id = ?";
             try (Connection conn = dbConnection.getConnection();
                  PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -50,10 +50,10 @@ public class CustomerDAO_DB implements ICustomer {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            return null;
+            return getCustomerById(id);
         }
 
-        public void updateCustomer (Customer customer){
+        public Customer updateCustomer (Customer customer) throws Exception{
             String sql = "UPDATE Customer SET name = ?, email = ?, phone = ? WHERE id = ?";
             try (Connection conn = dbConnection.getConnection();
                  PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -69,9 +69,11 @@ public class CustomerDAO_DB implements ICustomer {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+
+            return updateCustomer(customer);
         }
 
-        public void deleteCustomer(int id){
+        public void deleteCustomer(int id)throws Exception{
             String sql = "DELETE FROM Customers WHERE id = ?";
 
             try (Connection conn = dbConnection.getConnection();

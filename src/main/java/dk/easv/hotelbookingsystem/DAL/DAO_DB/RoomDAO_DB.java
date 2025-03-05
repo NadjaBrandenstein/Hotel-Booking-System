@@ -22,7 +22,7 @@ public class RoomDAO_DB implements IRoom {
     }
 
 
-    public void addRoom(Rooms room) {
+    public Rooms addRoom(Rooms room) throws Exception {
         String sql = "INSERT INTO rooms (room_number, type, price, is_available) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = dbConnection.getConnection();
@@ -46,10 +46,12 @@ public class RoomDAO_DB implements IRoom {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return addRoom(room);
     }
 
 
-    public Rooms getRoomById(int id) {
+    public Rooms getRoomById(int id) throws Exception {
         String sql = "SELECT * FROM rooms WHERE id = ?";
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -69,11 +71,11 @@ public class RoomDAO_DB implements IRoom {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return getRoomById(id);
     }
 
     // Get all rooms
-    public List<Rooms> getAllRooms() {
+    public List<Rooms> getAllRooms() throws Exception {
         List<Rooms> rooms = new ArrayList<>();
         String sql = "SELECT * FROM rooms";
 
@@ -97,7 +99,7 @@ public class RoomDAO_DB implements IRoom {
     }
 
 
-    public void updateRoom(Rooms room) {
+    public Rooms updateRoom(Rooms room) throws Exception {
         String sql = "UPDATE rooms SET room_number = ?, type = ?, price = ?, is_available = ? WHERE id = ?";
 
         try (Connection conn = dbConnection.getConnection();
@@ -114,9 +116,11 @@ public class RoomDAO_DB implements IRoom {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return updateRoom(room);
     }
 
-    public void deleteRoom(int id) {
+    public void deleteRoom(int id) throws Exception {
         String sql = "DELETE FROM rooms WHERE id = ?";
 
         try (Connection conn = dbConnection.getConnection();
@@ -131,7 +135,7 @@ public class RoomDAO_DB implements IRoom {
     }
 
 
-    public boolean isRoomAvailable(int roomNumber) {
+    public boolean isRoomAvailable(int roomNumber) throws Exception {
         String sql = "SELECT is_available FROM rooms WHERE room_number = ?";
 
         try (Connection conn = dbConnection.getConnection();

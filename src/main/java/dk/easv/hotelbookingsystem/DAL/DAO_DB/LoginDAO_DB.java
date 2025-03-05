@@ -15,7 +15,7 @@ public class LoginDAO_DB implements ILogin {
         this.dbConnection = dbConnection;
     }
 
-    public boolean validateLogin(String username, String password) {
+    public boolean validateLogin(String username, String password) throws Exception {
         String sql = "SELECT password FROM users WHERE username = ?";
 
         try (Connection conn = dbConnection.getConnection();
@@ -35,7 +35,7 @@ public class LoginDAO_DB implements ILogin {
         return false;
     }
 
-    public String getUserRole(String username) throws SQLException {
+    public String getUserRole(String username) throws Exception {
         String sql = "SELECT role FROM users WHERE username = ?";
 
         try (Connection conn = dbConnection.getConnection();
@@ -50,7 +50,7 @@ public class LoginDAO_DB implements ILogin {
         }catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return getUserRole(username);
     }
 
 
