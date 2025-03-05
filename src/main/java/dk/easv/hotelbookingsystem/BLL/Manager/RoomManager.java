@@ -14,24 +14,24 @@ public class RoomManager {
         roomDAO = new RoomDAO_DB();
     }
 
-    private Rooms addRoom(Rooms room) throws Exception{
+    public Rooms addRoom(Rooms room) throws Exception{
 
         return roomDAO.addRoom(room);
     }
 
-    private Rooms updateRoom(Rooms room) throws Exception{
+    public Rooms updateRoom(Rooms room) throws Exception{
         return roomDAO.updateRoom(room);
     }
 
-    private List<Rooms> getAllRooms() throws Exception{
+    public List<Rooms> getAllRooms() throws Exception{
         return roomDAO.getAllRooms();
     }
 
-    private void deleteRoom(int id) throws Exception{
+    public void deleteRoom(int id) throws Exception{
         roomDAO.deleteRoom(id);
     }
 
-    boolean isRoomAvailable(int roomNumber) throws Exception{
+    public boolean isRoomAvailable(int roomNumber) throws Exception{
         return roomDAO.isRoomAvailable(roomNumber);
     }
 }

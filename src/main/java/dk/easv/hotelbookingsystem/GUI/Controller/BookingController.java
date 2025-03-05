@@ -2,6 +2,7 @@ package dk.easv.hotelbookingsystem.GUI.Controller;
 
 import dk.easv.hotelbookingsystem.BE.Rooms;
 import dk.easv.hotelbookingsystem.GUI.Model.BookingModel;
+import dk.easv.hotelbookingsystem.GUI.Model.RoomModel;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.mfxcore.controls.Label;
 import javafx.fxml.FXML;
@@ -37,17 +38,19 @@ public class BookingController implements Initializable {
 
     // Other instance
     private BookingModel bookingModel;
+    private RoomModel roomModel;
 
-    public BookingController() {
+    public BookingController() throws Exception {
         bookingModel = new BookingModel();
         calendarGrid = new GridPane();
+        roomModel = new RoomModel();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TableView setup
         colRoomNo.setCellValueFactory(new PropertyValueFactory<>("roomNumber"));
-        tblRoom.setItems(bookingModel.getRooms());
+        tblRoom.setItems(roomModel.getTblRoom());
 
         // Other UI setup
         lblSelectDate.setText("Select date");

@@ -43,7 +43,7 @@ public class CheckInOutController implements Initializable {
     private RoomModel roomModel;
 
 
-    public CheckInOutController() {
+    public CheckInOutController() throws Exception {
         customerModel = new CustomerModel();
         roomModel = new RoomModel();
     }
