@@ -4,6 +4,7 @@ import dk.easv.hotelbookingsystem.BE.Rooms;
 import dk.easv.hotelbookingsystem.DAL.DBConnection.DBConnection;
 import dk.easv.hotelbookingsystem.DAL.Interface.IRoom;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +13,10 @@ import java.util.List;
 public class RoomDAO_DB implements IRoom {
 
 
-    private final DBConnection dbConnection;
+    private DBConnection dbConnection = new DBConnection();
 
-    public RoomDAO_DB(DBConnection dbConnection) {
-        if (dbConnection == null) {
-            throw new IllegalArgumentException("dbConnection is null");
-        }
-        this.dbConnection = dbConnection;
+    public RoomDAO_DB() throws IOException {
+
     }
 
 
