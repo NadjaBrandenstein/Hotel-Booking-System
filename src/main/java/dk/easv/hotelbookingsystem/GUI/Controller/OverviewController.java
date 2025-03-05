@@ -60,27 +60,6 @@ public class OverviewController {
     @FXML
     private Label lblName;
 
-   /* // Buttons
-    @FXML
-    private Button btnBooking;
-    @FXML
-    private Button btnCustomer;
-    @FXML
-    private Button btnCheckIn;
-    @FXML
-    private Button btnCheckOut;
-    @FXML
-    private Button btnLogOut;*/
-
-   /* @FXML
-    public void initialize() {
-        // Set button icons
-        setButtonIcon(btnBooking, "/dk/easv/hotelbookingsystem/FXML/Icon/Booking.png");
-        /*setButtonIcon(btnCustomer, "/dk/easv/hotelbookingsystem/FXML/Icon/Customer.png");
-        setButtonIcon(btnCheckIn, "/dk/easv/hotelbookingsystem/FXML/Icon/CheckIn.png");
-        setButtonIcon(btnCheckOut, "/dk/easv/hotelbookingsystem/FXML/Icon/CheckOut.png");
-        setButtonIcon(btnLogOut, "/dk/easv/hotelbookingsystem/FXML/Icon/LogOut.png");
-    }*/
 
     @FXML
     private void btnBooking(ActionEvent actionEvent) throws IOException {
@@ -96,7 +75,7 @@ public class OverviewController {
     @FXML
     private void btnCustomer(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/dk/easv/hotelbookingsystem/FXML/FXML/Customer.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 620, 430);
         Stage stage = new Stage();
         stage.setTitle("Hotel Management System - Overview");
         stage.setScene(scene);
@@ -106,7 +85,7 @@ public class OverviewController {
     @FXML
     private void btnCheckIn(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/dk/easv/hotelbookingsystem/FXML/FXML/CheckInOut.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Stage stage = new Stage();
         stage.setTitle("Hotel Management System - Overview");
         stage.setScene(scene);
@@ -121,17 +100,12 @@ public class OverviewController {
     @FXML
     private void btnCheckOut(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/dk/easv/hotelbookingsystem/FXML/FXML/CheckInOut.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Stage stage = new Stage();
         stage.setTitle("Hotel Management System - Overview");
         stage.setScene(scene);
         stage.show();
     }
 
-
-    /*private void setButtonIcon(Button button, String iconPath) {
-        Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream(iconPath)));
-        button.setGraphic(new ImageView(icon)); // Set the button graphic
-    }*/
 
 }

@@ -33,7 +33,7 @@ public class LoginController {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Hotel Management System - Overview");
-        stage.setResizable(true);
+        stage.setResizable(false);
         stage.sizeToScene();
         stage.show();
 
