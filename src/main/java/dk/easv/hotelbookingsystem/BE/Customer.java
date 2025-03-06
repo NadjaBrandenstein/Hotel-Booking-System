@@ -7,19 +7,20 @@ public class Customer {
     private String lastName;
     private String email;
     private int phoneNumber;
-    private String adress;
+    private String address;
     private int postalCode;
     private String city;
     private String Country;
 
 
     public Customer(int customerId, String firstName, String lastName, String email, int phoneNumber, String adress,int postalCode, String city, String country) {
+    public Customer(int customerId, String firstName, String lastName, String email, String phoneNumber, String address,int postalCode, String city, String country) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.adress = adress;
+        this.address = adress;
         this.postalCode = postalCode;
         this.city = city;
         Country = country;
@@ -30,7 +31,7 @@ public class Customer {
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.adress = adress;
+        this.address = adress;
         this.postalCode = postalCode;
         this.city = city;
         Country = country;
@@ -76,12 +77,12 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getPostalCode() {
@@ -116,7 +117,7 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", adress='" + adress + '\'' +
+                ", address='" + address + '\'' +
                 ", postalCode=" + postalCode +
                 ", city='" + city + '\'' +
                 ", Country='" + Country + '\'' +
