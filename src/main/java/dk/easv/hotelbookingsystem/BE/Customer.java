@@ -6,14 +6,14 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
-    private String phoneNumber;
+    private int phoneNumber;
     private String adress;
     private int postalCode;
     private String city;
     private String Country;
 
 
-    public Customer(int customerId, String firstName, String lastName, String email, String phoneNumber, String adress,int postalCode, String city, String country) {
+    public Customer(int customerId, String firstName, String lastName, String email, int phoneNumber, String adress,int postalCode, String city, String country) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -25,7 +25,15 @@ public class Customer {
         Country = country;
     }
 
-    public Customer(int id, String firstName, String lastName) {
+    public Customer(String firstName, String lastName, String email, int phoneNumber, String adress, int postalCode, String city, String country) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.adress = adress;
+        this.postalCode = postalCode;
+        this.city = city;
+        Country = country;
     }
 
     public int getCustomerId() {
@@ -60,11 +68,11 @@ public class Customer {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -74,6 +82,14 @@ public class Customer {
 
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public int getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(int postalCode) {
+        this.postalCode = postalCode;
     }
 
     public String getCity() {
@@ -92,14 +108,6 @@ public class Customer {
         Country = country;
     }
 
-    public int getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
-    }
-
     @Override
     public String toString() {
         return "Customer{" +
@@ -115,15 +123,5 @@ public class Customer {
                 '}';
     }
 
-    public String getName() {
-        return firstName + " " + lastName;
-    }
 
-    public String getPhone() {
-        return phoneNumber;
-    }
-
-    public int getId() {
-        return customerId;
-    }
 }

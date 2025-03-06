@@ -1,10 +1,13 @@
 package dk.easv.hotelbookingsystem.DAL.DAO_DB;
 
 import dk.easv.hotelbookingsystem.BE.Customer;
+import dk.easv.hotelbookingsystem.BE.Rooms;
 import dk.easv.hotelbookingsystem.DAL.DBConnection.DBConnection;
 import dk.easv.hotelbookingsystem.DAL.Interface.ICustomer;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerDAO_DB implements ICustomer {
     private final DBConnection dbConnection;
@@ -14,17 +17,24 @@ public class CustomerDAO_DB implements ICustomer {
     }
 
     public Customer createCustomer(Customer customer) throws Exception {
-        String sql = "INSERT INTO customer (first_name, last_name) VALUES (?, ?)";
+        String sql = "INSERT INTO customer (FirstName, LastName, Email, PhoneNo, Adress, PostalCode,City,Country) VALUES (?,?,?,?,?,?,?,?)";
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, customer.getFirstName());
             stmt.setString(2, customer.getLastName());
+            stmt.setString(3, customer.getEmail());
+            stmt.setInt(4, customer.getPhoneNumber());
+            stmt.setString(5, customer.getAdress());
+            stmt.setInt(6,customer.getPostalCode());
+            stmt.setString(7, customer.getCity());
+            stmt.setString(8, customer.getCountry());
+
             stmt.executeUpdate();
             ResultSet generatedKeys = stmt.getGeneratedKeys();
             if (generatedKeys.next()) {
                 int id = generatedKeys.getInt(1);
-                return new Customer(id, customer.getFirstName(), customer.getLastName());
+                return new Customer(customer.getFirstName(), customer.getLastName(),customer.getEmail(),customer.getPhoneNumber(),customer.getAdress(),customer.getPostalCode(),customer.getCity(),customer.getCountry());
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -32,59 +42,74 @@ public class CustomerDAO_DB implements ICustomer {
         return createCustomer(customer);
     }
 
-        public Customer getCustomerById(int id) throws Exception {
-            String sql = "SELECT * FROM Customer WHERE id = ?";
-            try (Connection conn = dbConnection.getConnection();
-                 PreparedStatement stmt = conn.prepareStatement(sql)) {
+    @Override
+    public List<Customer> getAllCustomers() throws Exception {
+        ArrayList<Customer> allCustomers = new ArrayList<>();
+        String sql = "SELECT * FROM dbo.Customer";
 
-                stmt.setInt(1, id);
-                ResultSet rs = stmt.executeQuery();
+        try (Connection conn = dbConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
 
-                if (rs.next()) {
-                    return new Customer(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getString("email")
-                    );
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
+            while (rs.next()) {
+                String firstName = rs.getString("FirstName");
+                String lastName = rs.getString("LastName");
+                String email = rs.getString("Email");
+                int phoneNumber = rs.getInt("PhoneNo");
+                String adress = rs.getString("Adress");
+                int postalCode = Integer.parseInt(rs.getString("PostalCode"));
+                String city = rs.getString("City");
+                String country = rs.getString("Country");
+
+                Customer customer = new Customer(firstName,lastName,email,phoneNumber,adress,postalCode,city,country);
+                allCustomers.add(customer);
             }
-            return getCustomerById(id);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allCustomers;
+    }
+
+
+    public Customer updateCustomer (Customer customer) throws Exception{
+        String sql = "UPDATE Customer SET (FirstName = ?, LastName = ?, Email = ?, PhoneNo = ?,  Adress = ?, PostalCode = ?, City = ?, Country = ?) WHERE CustomerID = ?";
+        try (Connection conn = dbConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, customer.getCustomerId());
+            stmt.setString(2, customer.getFirstName());
+            stmt.setString(3, customer.getLastName());
+            stmt.setString(4, customer.getEmail());
+            stmt.setInt(5, customer.getPhoneNumber());
+            stmt.setString(6, customer.getAdress());
+            stmt.setInt(7,customer.getPostalCode());
+            stmt.setString(8, customer.getCity());
+            stmt.setString(9, customer.getCountry());
+
+
+            stmt.executeUpdate();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        public Customer updateCustomer (Customer customer) throws Exception{
-            String sql = "UPDATE Customer SET name = ?, email = ?, phone = ? WHERE id = ?";
-            try (Connection conn = dbConnection.getConnection();
-                 PreparedStatement stmt = conn.prepareStatement(sql)) {
+        return updateCustomer(customer);
+    }
 
-                stmt.setString(1, customer.getName());
-                stmt.setString(2, customer.getEmail());
-                stmt.setString(3, customer.getPhone());
-                stmt.setInt(4, customer.getId());
+    public void deleteCustomer(Customer customer)throws Exception{
+        String sql = "DELETE FROM Customer WHERE CustomerID = ?";
 
-                stmt.executeUpdate();
+        try (Connection conn = dbConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
+            stmt.setInt(1, customer.getCustomerId());
+            stmt.executeUpdate();
 
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-            return updateCustomer(customer);
-        }
-
-        public void deleteCustomer(int id)throws Exception{
-            String sql = "DELETE FROM Customers WHERE id = ?";
-
-            try (Connection conn = dbConnection.getConnection();
-                 PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-                stmt.setInt(1, id);
-                stmt.executeUpdate();
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
+}
 

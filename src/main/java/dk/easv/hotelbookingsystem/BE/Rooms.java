@@ -24,6 +24,8 @@ public class Rooms {
         this.isAvailable = isAvailable;
     }
 
+
+
     public int getRoomNumber() {
         return roomNumber;
     }
