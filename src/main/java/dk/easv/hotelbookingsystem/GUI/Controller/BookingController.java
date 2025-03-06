@@ -11,6 +11,7 @@ import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.mfxcore.controls.Label;
 
 // Javafx import
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,6 +19,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -44,9 +46,9 @@ public class BookingController implements Initializable {
     @FXML
     private Label lblSelectDate;
     @FXML
-    private MFXDatePicker dpDatePicker;
-    @FXML
     private GridPane calendarGrid;
+    @FXML
+    private DatePicker dpDatePicker;
 
     // Other instance
     private BookingModel bookingModel;
@@ -165,6 +167,4 @@ public class BookingController implements Initializable {
             e.printStackTrace();
         }
     }
-
-
-}
+    }
