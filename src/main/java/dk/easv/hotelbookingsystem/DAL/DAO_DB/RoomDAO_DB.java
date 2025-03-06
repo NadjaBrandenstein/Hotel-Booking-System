@@ -21,7 +21,7 @@ public class RoomDAO_DB implements IRoom {
 
 
     public Rooms addRoom(Rooms room) throws Exception {
-        String sql = "INSERT INTO rooms (room_number, type, price, is_available) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO Room (room_number, type, price, is_available) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -74,7 +74,7 @@ public class RoomDAO_DB implements IRoom {
 
 
     public void updateRoom(Rooms room) throws Exception {
-        String sql = "UPDATE rooms SET type = ?, price = ?, is_available = ? WHERE room_number = ?";
+        String sql = "UPDATE Room SET type = ?, price = ?, is_available = ? WHERE room_number = ?";
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -90,7 +90,7 @@ public class RoomDAO_DB implements IRoom {
     }
 
     public void deleteRoom(int roomNumber) throws Exception {
-        String sql = "DELETE FROM rooms WHERE RoomNo = ?";
+        String sql = "DELETE FROM Room WHERE RoomNo = ?";
 
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -105,7 +105,7 @@ public class RoomDAO_DB implements IRoom {
 
 
     public boolean isRoomAvailable(int roomNumber) throws Exception {
-        String sql = "SELECT is_available FROM rooms WHERE room_number = ?";
+        String sql = "SELECT is_available FROM Room WHERE roomNo = ?";
 
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

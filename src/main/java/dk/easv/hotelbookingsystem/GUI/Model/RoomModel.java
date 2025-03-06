@@ -2,11 +2,10 @@ package dk.easv.hotelbookingsystem.GUI.Model;
 
 import dk.easv.hotelbookingsystem.BE.Rooms;
 import dk.easv.hotelbookingsystem.BLL.Manager.RoomManager;
-import dk.easv.hotelbookingsystem.GUI.Controller.BookingController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class RoomModel {
@@ -44,7 +43,9 @@ public class RoomModel {
         roomManager.deleteRoom(id);
     }
 
-    public boolean isRoomAvailable(int roomNumber) throws Exception{
+    public boolean isRoomAvailable(int roomNumber, LocalDate currentDate) throws Exception{
         return roomManager.isRoomAvailable(roomNumber);
     }
+
+
 }
