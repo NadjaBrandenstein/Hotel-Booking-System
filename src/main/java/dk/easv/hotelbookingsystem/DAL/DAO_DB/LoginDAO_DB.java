@@ -3,16 +3,21 @@ package dk.easv.hotelbookingsystem.DAL.DAO_DB;
 import dk.easv.hotelbookingsystem.DAL.DBConnection.DBConnection;
 import dk.easv.hotelbookingsystem.DAL.Interface.ILogin;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.io.IOException;
+import java.sql.*;
 
 public class LoginDAO_DB implements ILogin {
-    private final DBConnection dbConnection;
+    private static final String URL = "jdbc:mysql://localhost:3306/hotelbookingsystem";
+    private static final String USER = "root";
+    private static final String PASSWORD = "password";
 
-    public LoginDAO_DB(DBConnection dbConnection) {
-        this.dbConnection = dbConnection;
+    public Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+    private DBConnection dbConnection = new DBConnection();
+
+    public LoginDAO_DB() throws IOException {
+
     }
 
     public boolean validateLogin(String username, String password) throws Exception {
