@@ -1,5 +1,6 @@
 package dk.easv.hotelbookingsystem.GUI.Controller;
 
+import dk.easv.hotelbookingsystem.GUI.Model.OverviewModel;
 import dk.easv.hotelbookingsystem.Main;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import io.github.palexdev.mfxcore.controls.Label;

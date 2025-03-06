@@ -14,3 +14,11 @@ MFXButton {
 .table-view .column-header {
     -fx-background-color: lightblue;
 }
+
+MFXDatePicker .column-header{
+    -fx-background-color: lightblue;
+}
+
+datepicker {
+    -fx-background-color: lightblue;
+}

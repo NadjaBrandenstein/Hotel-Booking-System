@@ -3,6 +3,7 @@
 <?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import io.github.palexdev.mfxcore.controls.Label?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -11,8 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@/dk/easv/hotelbookingsystem/FXML/CSS/StyleSheet.css" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.BookingController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@/dk/easv/hotelbookingsystem/FXML/CSS/StyleSheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.hotelbookingsystem.GUI.Controller.BookingController">
    <left>
       <TableView fx:id="tblRoom" prefHeight="400.0" prefWidth="76.0" BorderPane.alignment="CENTER">
         <columns>
@@ -25,6 +25,7 @@
          <children>
             <Label fx:id="lblSelectDate" prefHeight="18.0" prefWidth="94.0" />
             <MFXDatePicker fx:id="dpDatePicker" />
+            <DatePicker />
          </children>
       </HBox>
    </top>
