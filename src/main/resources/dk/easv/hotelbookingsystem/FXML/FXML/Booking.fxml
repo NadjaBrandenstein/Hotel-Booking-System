@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import io.github.palexdev.mfxcore.controls.Label?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -23,9 +23,14 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="lblSelectDate" prefHeight="18.0" prefWidth="94.0" />
-            <MFXDatePicker fx:id="dpDatePicker" />
-            <DatePicker />
+            <Label fx:id="lblSelectDate" prefHeight="18.0" prefWidth="94.0">
+               <HBox.margin>
+                  <Insets top="9.0" />
+               </HBox.margin></Label>
+            <DatePicker fx:id="dpDatePicker">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin></DatePicker>
          </children>
       </HBox>
    </top>
