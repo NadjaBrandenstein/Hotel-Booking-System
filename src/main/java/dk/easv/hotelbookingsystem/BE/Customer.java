@@ -13,14 +13,14 @@ public class Customer {
     private String Country;
 
 
-    public Customer(int customerId, String firstName, String lastName, String email, int phoneNumber, String adress,int postalCode, String city, String country) {
-    public Customer(int customerId, String firstName, String lastName, String email, String phoneNumber, String address,int postalCode, String city, String country) {
+
+    public Customer(int customerId, String firstName, String lastName, String email, int phoneNumber, String address,int postalCode, String city, String country) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.address = adress;
+        this.address = address;
         this.postalCode = postalCode;
         this.city = city;
         Country = country;
@@ -35,6 +35,10 @@ public class Customer {
         this.postalCode = postalCode;
         this.city = city;
         Country = country;
+    }
+
+    public Customer() {
+
     }
 
     public int getCustomerId() {

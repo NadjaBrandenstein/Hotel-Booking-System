@@ -39,12 +39,12 @@
    <Label graphicTextGap="5.0" layoutX="366.0" layoutY="225.0" text="Postal Code:" />
    <Label graphicTextGap="5.0" layoutX="366.0" layoutY="251.0" text="City:" />
    <Label graphicTextGap="5.0" layoutX="366.0" layoutY="275.0" text="Country:" />
-   <Label fx:id="lblFName" layoutX="514.0" layoutY="100.0" prefHeight="18.0" prefWidth="60.0" text="FN" />
-   <Label fx:id="lblLName" layoutX="514.0" layoutY="127.0" prefHeight="18.0" prefWidth="60.0" text="LN" />
-   <Label fx:id="lblPhoneNo" layoutX="514.0" layoutY="152.0" prefHeight="18.0" prefWidth="60.0" text="PN" />
-   <Label fx:id="lblEmail" layoutX="514.0" layoutY="174.0" prefHeight="18.0" prefWidth="60.0" text="E" />
-   <Label fx:id="lblAddress" layoutX="514.0" layoutY="198.0" prefHeight="18.0" prefWidth="60.0" text="A" />
-   <Label fx:id="lblPostalCode" layoutX="514.0" layoutY="224.0" prefHeight="18.0" prefWidth="60.0" text="PC" />
-   <Label fx:id="lblCity" layoutX="514.0" layoutY="250.0" prefHeight="18.0" prefWidth="60.0" text="C" />
-   <Label fx:id="lblCountry" layoutX="514.0" layoutY="274.0" prefHeight="18.0" prefWidth="60.0" text="C" />
+   <Label fx:id="lblFName" layoutX="475.0" layoutY="100.0" prefHeight="18.0" prefWidth="200.0" text="FN" />
+   <Label fx:id="lblLName" layoutX="475.0" layoutY="127.0" prefHeight="18.0" prefWidth="200.0" text="LN" />
+   <Label fx:id="lblPhoneNo" layoutX="475.0" layoutY="152.0" prefHeight="18.0" prefWidth="200.0" text="PN" />
+   <Label fx:id="lblEmail" layoutX="475.0" layoutY="174.0" prefHeight="18.0" prefWidth="200.0" text="E" />
+   <Label fx:id="lblAddress" layoutX="475.0" layoutY="198.0" prefHeight="18.0" prefWidth="200.0" text="A" />
+   <Label fx:id="lblPostalCode" layoutX="475.0" layoutY="224.0" prefHeight="18.0" prefWidth="200.0" text="PC" />
+   <Label fx:id="lblCity" layoutX="475.0" layoutY="250.0" prefHeight="18.0" prefWidth="200.0" text="C" />
+   <Label fx:id="lblCountry" layoutX="475.0" layoutY="274.0" prefHeight="18.0" prefWidth="200.0" text="C" />
 </AnchorPane>

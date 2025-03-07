@@ -20,9 +20,6 @@ public class CustomerManager {
         return customerDAODb.getAllCustomers();
     }
 
-    public Customer getCustomerById(int id) throws Exception {
-        return customerDAODb.getCustomerById(id);
-    }
     public Customer createCustomer(Customer customer) throws Exception{
         return customerDAODb.createCustomer(customer);
     }
@@ -31,8 +28,8 @@ public class CustomerManager {
         return customerDAODb.updateCustomer(customer);
     }
 
-    public Customer deleteCustomer(int id) throws Exception {
-        return customerDAODb.deleteCustomer(id);
+    public void deleteCustomer(Customer customer) throws Exception {
+        customerDAODb.deleteCustomer(customer);
     }
 
 

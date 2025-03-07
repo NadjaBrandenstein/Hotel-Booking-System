@@ -25,7 +25,7 @@ public class CustomerDAO_DB implements ICustomer {
             stmt.setString(2, customer.getLastName());
             stmt.setString(3, customer.getEmail());
             stmt.setInt(4, customer.getPhoneNumber());
-            stmt.setString(5, customer.getAdress());
+            stmt.setString(5, customer.getAddress());
             stmt.setInt(6,customer.getPostalCode());
             stmt.setString(7, customer.getCity());
             stmt.setString(8, customer.getCountry());
@@ -34,7 +34,7 @@ public class CustomerDAO_DB implements ICustomer {
             ResultSet generatedKeys = stmt.getGeneratedKeys();
             if (generatedKeys.next()) {
                 int id = generatedKeys.getInt(1);
-                return new Customer(customer.getFirstName(), customer.getLastName(),customer.getEmail(),customer.getPhoneNumber(),customer.getAdress(),customer.getPostalCode(),customer.getCity(),customer.getCountry());
+                return new Customer(customer.getFirstName(), customer.getLastName(),customer.getEmail(),customer.getPhoneNumber(),customer.getAddress(),customer.getPostalCode(),customer.getCity(),customer.getCountry());
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,16 +52,18 @@ public class CustomerDAO_DB implements ICustomer {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
+                int id = rs.getInt("CustomerID");
+                System.out.println("Fetched CustomerID: " + id);
                 String firstName = rs.getString("FirstName");
                 String lastName = rs.getString("LastName");
                 String email = rs.getString("Email");
                 int phoneNumber = rs.getInt("PhoneNo");
-                String adress = rs.getString("Adress");
+                String address = rs.getString("Adress");
                 int postalCode = Integer.parseInt(rs.getString("PostalCode"));
                 String city = rs.getString("City");
                 String country = rs.getString("Country");
 
-                Customer customer = new Customer(firstName,lastName,email,phoneNumber,adress,postalCode,city,country);
+                Customer customer = new Customer(id,firstName,lastName,email,phoneNumber,address,postalCode,city,country);
                 allCustomers.add(customer);
             }
 
@@ -82,7 +84,7 @@ public class CustomerDAO_DB implements ICustomer {
             stmt.setString(3, customer.getLastName());
             stmt.setString(4, customer.getEmail());
             stmt.setInt(5, customer.getPhoneNumber());
-            stmt.setString(6, customer.getAdress());
+            stmt.setString(6, customer.getAddress());
             stmt.setInt(7,customer.getPostalCode());
             stmt.setString(8, customer.getCity());
             stmt.setString(9, customer.getCountry());
